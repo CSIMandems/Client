@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Routes, Route } from 'react-router-dom';
+// import './App.css';
+import DentistUI from './UI/DentistUI';
+import PatientUI from './UI/PatientUI';
+import ReceptionistUI from './UI/ReceptionistUI';
+import TriageUI from './UI/TriageUI';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<TriageUI />} />
+          <Route path='/patient' element={<PatientUI />}></Route>
+          <Route path='/dentist' element={<DentistUI />}></Route>
+          <Route path='/receptionist' element={<ReceptionistUI />}></Route>
+        </Routes>
+      </div>
+    )
+  }
 }
 
 export default App;
