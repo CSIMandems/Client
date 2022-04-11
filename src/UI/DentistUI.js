@@ -5,7 +5,7 @@ export default class DentistUI extends Component {
 		return (
 			<div>
 				<h1>Welcome, [insert dentist name here]</h1>
-				<p>Dentist UI goes here</p>
+				<h2>Assigned Patients</h2>
 			</div>
 		)
 	}

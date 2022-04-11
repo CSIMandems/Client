@@ -5,7 +5,9 @@ export default class PatientUI extends Component {
 		return (
 			<div>
 				<h1>Welcome, [insert patient name here]</h1>
-				<p>Patient UI goes here</p>
+				<h2>Records</h2>
+				<h2>History</h2>
+				<h2>Upcoming Appointments</h2>
 			</div>
 		)
 	}
