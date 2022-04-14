@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-export default class PatientUI extends Component {
-	render() {
+export default function PatientUI(){
+
 		return (
 			<div>
 				<h1>Welcome, [insert patient name here]</h1>
@@ -10,5 +10,5 @@ export default class PatientUI extends Component {
 				<h2>Upcoming Appointments</h2>
 			</div>
 		)
-	}
+
 }

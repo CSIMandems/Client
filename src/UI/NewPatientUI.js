@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-export default class NewPatientUI extends Component {
-    render() {
+export default function  NewPatientUI() {
         return (
             <div>
                 <input type="text" /* value={} */ onChange={(evt) => { }} placeholder="First Name" />
@@ -17,5 +16,4 @@ export default class NewPatientUI extends Component {
                 <button>Save</button>
             </div>
         )
-    }
 }
