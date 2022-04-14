@@ -18,11 +18,11 @@ export default function LoginUI(){
            });
        deets = await deets.json();
        localStorage.setItem(JSON.stringify(deets))
-        if(localStorage.getItem('SSN' in patient)){
+        if(localStorage.getItem('SSN' in patient) && password in patient){
             history.push("/patient")
-        }else if(localStorage.getItem('SSN')in dentist){
+        }else if(localStorage.getItem('SSN') in dentist  && password in dentist){
             history.push("/dentist")
-        }else if(localStorage.getItem('SSN')in receptionist){
+        }else if(localStorage.getItem('SSN')in receptionist && password in receptionist){
               history.push("/receptionist")
         }
    }
