@@ -1,14 +1,10 @@
-import {useState, useHistory, useEffect} from 'react'
+import {useState,  useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
 
 export default function LoginUI(){
     const [userId,setUserId] = useState("");
     const[password,setPassword] = useState("");
     const history = useHistory();
-    useEffect(()=>{
-        if(localStorage.getItem('userId')){
-            history.push("/patient")
-        }
-    })
 
     async function login(){
        console.log(userId +" "+ password)
@@ -22,7 +18,13 @@ export default function LoginUI(){
            });
        deets = await deets.json();
        localStorage.setItem(JSON.stringify(deets))
-        history.push("/patient")
+        if(localStorage.getItem('SSN' in patient)){
+            history.push("/patient")
+        }else if(localStorage.getItem('SSN')in dentist){
+            history.push("/dentist")
+        }else if(localStorage.getItem('SSN')in receptionist){
+              history.push("/receptionist")
+        }
    }
     return(
         <div>
