@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import NewPatientUI from './NewPatientUI';
+import NewUserUI from './NewUserUI';
+import NewPatientUI from './NewUserUI';
 
 export default function ReceptionistUI() {
 
 	return (
 		<div>
 			<h1>Welcome, [insert receptionist name here]</h1>
-			<button>New Patient</button>
-			<NewPatientUI></NewPatientUI>
+			<h2>Add User</h2>
+			<NewUserUI></NewUserUI>
 		</div>
 	)
 }
