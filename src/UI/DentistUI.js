@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component, useEffect, useState} from 'react';
 
 export default function DentistUI() {
+	const [empName,setUserName] = useState("");
+	useEffect(()=>{
+
+	},[])
 
 		return (
 			<div>
-				<h1>Welcome, [insert dentist name here]</h1>
-				<h2>Assigned Patients</h2>
+				<h1>Welcome {empName}</h1>
+				<h2>Assigned Jobs</h2>
+				<button>Show Appointments</button>
 			</div>
 		)
 

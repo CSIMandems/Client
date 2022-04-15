@@ -20,7 +20,7 @@ class App extends Component {
         <Routes>
           <Route path='/' element={<LoginUI />}></Route>
           <Route path='/patient' element={<PatientUI />}></Route>
-          <Route path='/dentist' element={<DentistUI />}></Route>
+          <Route path='/employees' element={<DentistUI />}></Route>
           <Route path='/receptionist' element={<ReceptionistUI />}></Route>
         </Routes>
 
