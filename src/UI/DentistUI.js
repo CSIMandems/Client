@@ -1,16 +1,11 @@
 import React, {Component, useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 
-export default function DentistUI(props) {
+export default function DentistUI() {
+	// let location = useLocation();
+	// const [empName,setUserName] = useState(location.state);
 
-	let location = useLocation();
-	let empName = location.state;
-
-	// useEffect(()=>{
-	// 	empName = location.state;
-	// },[])
-
-	return (
+		return (
 			<div>
 				<h1>Welcome {empName}</h1>
 				<h2>Assigned Jobs</h2>
