@@ -10,7 +10,8 @@ export default function LoginUI(){
         if(localStorage.getItem('user-info')){
             nav.navigate("/patient")
         }
-    })
+    },[])
+    
     async function loginPatient(){
        let item ={username:userName, password};
        let result = await fetch("http://localhost:8000/users/login",{
