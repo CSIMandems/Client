@@ -28,10 +28,10 @@ export default function LoginUI(){
 
       if(result.user_type === "Dentist" ){
                 nav("/employees", {state: { username: userName }})
-      }else if(result.user_type === "Patient",{state: { username: userName }} ){
-            nav("/patient")
-      }else if(result.user_type === "Receptionist",{state: { username: userName }} ){
-          nav("/receptionist")
+      }else if(result.user_type === "Patient"){
+            nav("/patient",{state: { username: userName }} )
+      }else if(result.user_type === "Receptionist"){
+          nav("/receptionist",{state: { username: userName }} )
       }else{
           alert("invalid user, you need to be a dentist, patient or receptionist to access terminal")
       }
