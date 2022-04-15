@@ -1,33 +1,44 @@
 import {useState,  useEffect} from 'react'
-import { useHistory } from 'react-router-dom';
 
+import { useNavigate } from 'react-router-dom';
 export default function LoginUI(){
-    const [userId,setUserId] = useState("");
+    const [userName,setUserId] = useState("");
     const[password,setPassword] = useState("");
-    // const history = useHistory();
+    const nav = useNavigate();
 
-   //  async function login(){
-   //     console.log(userId +" "+ password)
-   //     let item = {userId,password};
-   //     let deets = await fetch("",{
-   //         method:'POST',
-   //         headers:{
-   //             //TODO
-   //         },
-   //         body:JSON.stringify(item),
-   //         });
-   //     deets = await deets.json();
-   //     localStorage.setItem(JSON.stringify(deets));
-   // }
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            nav.navigate("/patient")
+        }
+    })
+    async function loginPatient(){
+       let item ={username:userName, password};
+       let result = await fetch("http://localhost:8000/users/login",{
+           method:'POST',
+           headers:{
+               "Content-Type":"application/json",
+               "Accept":"application/json"
+           },
+           body: JSON.stringify(item)
+       });
+        alert(result);
+        alert("breakpoint")
+       result = await result.json();
+       localStorage.setItem("user-info",JSON.stringify(result));
+       nav.navigate('/patient')
+   }
     return(
         <div>
-            <input type="text" placeholder="userID"  onChange={(e) => setUserId(e.target.value)}
-            className="form-control"/>
+            <h1>LOGIN PAGE</h1>
+            <input type="text" placeholder="username"
+                   onChange={(e) => setUserId(e.target.value)}
+                   className="form-control"/>
             <br></br>
-            <input type="text" placeholder="password"   onChange={(e) => setUserId(e.target.value)}
-                className="form-control"/>
+            <input type="text" placeholder="password"
+                   onChange={(e) => setPassword(e.target.value)}
+                   className="form-control"/>
             <br></br>
-            <button >LOGIN</button>
+            <button onClick={loginPatient} >LOGIN</button>
         </div>
     )
 }
