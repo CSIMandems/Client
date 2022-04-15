@@ -6,6 +6,7 @@ export default function PatientUI(){
 		let currentUser = location.state.username;
 		let currentPassword = location.state.password;
 
+
 		async function showApp(){
 			//get user id from login
 			let item ={username:currentUser, password:currentPassword};
@@ -33,6 +34,8 @@ export default function PatientUI(){
 			let status = apps.status;
 			localStorage.setItem("user-info",JSON.stringify(apps));
 		}
+
+
 
 		return (
 			<div>
