@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export default function LoginUI(){
     const [userName,setUserId] = useState("");
     const[password,setPassword] = useState("");
+    const[type,setType] = useState("");
     const nav = useNavigate();
 
     useEffect(()=>{
@@ -26,11 +27,13 @@ export default function LoginUI(){
        localStorage.setItem("user-info",JSON.stringify(result));
 
       if(result.user_type === "Dentist" ){
-                nav("/dentist")
-      }else if(result.user_type === "Patient" ){
+                nav("/employees", {state: { username: userName }})
+      }else if(result.user_type === "Patient",{state: { username: userName }} ){
             nav("/patient")
-      }else if(result.user_type === "Receptionist" ){
+      }else if(result.user_type === "Receptionist",{state: { username: userName }} ){
           nav("/receptionist")
+      }else{
+          alert("invalid user, you need to be a dentist, patient or receptionist to access terminal")
       }
    }
     return(
@@ -44,6 +47,10 @@ export default function LoginUI(){
                    onChange={(e) => setPassword(e.target.value)}
                    className="form-control"/>
             <br></br>
+            {/*<input type="text" placeholder="Dentist, Patient or Receptionist ?"*/}
+            {/*       onChange={(e) => setType(e.target.value)}*/}
+            {/*       className="form-control"/>*/}
+            {/*<br></br>*/}
             <button onClick={loginPatient} >LOGIN</button>
         </div>
     )
