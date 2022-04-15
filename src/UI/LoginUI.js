@@ -27,11 +27,11 @@ export default function LoginUI(){
        localStorage.setItem("user-info",JSON.stringify(result));
 
       if(result.user_type === "Dentist" ){
-                nav("/employees", {state: { username: userName }})
+                nav("/employees", {state: { username: userName,password:password}})
       }else if(result.user_type === "Patient"){
-            nav("/patient",{state: { username: userName }} )
+            nav("/patient",{state: { username: userName,password:password }} )
       }else if(result.user_type === "Receptionist"){
-          nav("/receptionist",{state: { username: userName }} )
+          nav("/receptionist",{state: { username: userName,password:password }} )
       }else{
           alert("invalid user, you need to be a dentist, patient or receptionist to access terminal")
       }
