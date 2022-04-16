@@ -26,7 +26,7 @@ export default function LoginUI() {
 		result = await result.json();
 		localStorage.setItem('user-info', JSON.stringify(result));
 
-		if (result.user_type === 'Dentist') {
+		if (result.user_type === 'Dentist'|| result.user_type === 'Hygienist') {
 			nav('/employees', { state: { username: userName, password: password } });
 		} else if (result.user_type === 'Patient') {
 			nav('/patient', { state: { username: userName, password: password } });
