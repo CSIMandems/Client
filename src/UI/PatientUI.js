@@ -41,10 +41,8 @@ export default function PatientUI(props) {
 			},
 		});
 		apps = await apps.json();
-		let status = apps.status;
 		localStorage.setItem("user-info", JSON.stringify(apps));
 
-		console.log(apps);
 		setApps(apps.data);
 	}
 
