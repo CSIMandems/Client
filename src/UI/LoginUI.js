@@ -39,7 +39,7 @@ export default function LoginUI() {
 			});
 		} else {
 			alert(
-				'invalid user, you need to be a dentist, patient or receptionist to access terminal'
+				'invalid user, you have to be a dentist, patient or receptionist to access terminal'
 			);
 		}
 	}
