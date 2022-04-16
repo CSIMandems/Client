@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Group 17 - Client
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Team Members
+
+| Name             | Student Number |
+| ---------------- | -------------- |
+| Bhoi, Shaan      | 300037516      |
+| Proulx, Justin   | 300060172      |
+| Shwan, Daniel    | 300013694      |
+| Bhuyan, Arunasva | 300055811      |
+| Dahamna, Lilia   | 300208267      |
 
 ## Available Scripts
 
