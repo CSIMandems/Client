@@ -68,6 +68,7 @@ export default function PatientUI(props) {
 	return (
 		<div>
 			<h1>Welcome {currentUser}</h1>
+			<h2>Here Are your appointments</h2>
 			{loaded ? showApp() : <p>Loading...</p>}
 		</div>
 	)
